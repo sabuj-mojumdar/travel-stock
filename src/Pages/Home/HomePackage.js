@@ -10,7 +10,7 @@ const HomePackage = () => {
 
     return (
         <Container>
-            <Row lg={3} className="g-3 my-3">
+            <Row lg={3} xs={1} className="g-3 my-3">
                 {
                     slicePackage.map(pd =>
                         <Package

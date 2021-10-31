@@ -58,7 +58,6 @@ const Login = () => {
                         <Row className="m-3">
                             <Col>
                                 <Button variant="outline-primary" className=" w-100 bgbtn">
-                                    <i className="fas fa-sign-out-alt"></i>
                                     <input type="submit" value="login" className="border-0 w-100 bg" />
                                 </Button>
                                 {/* <Button variant="outline-success" className="w-100"><i className="fas fa-sign-in-alt"></i> Login</Button> */}

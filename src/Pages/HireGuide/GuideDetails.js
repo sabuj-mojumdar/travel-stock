@@ -32,7 +32,7 @@ const GuideDetails = () => {
                 </Row>
                 <hr />
                 <Row className="g-3">
-                    <Col lg={8}>
+                    <Col lg={8} sm={6}>
                         <Card className="mb-3">
                             <Card.Body>
                                 <div className="d-flex">
@@ -84,7 +84,7 @@ const GuideDetails = () => {
                             </Card.Body>
                         </Card>
                     </Col>
-                    <Col lg={4}>
+                    <Col lg={4} xs={6}>
                         <Card className="mb-3">
                             <Card.Body>
                                 <p className='fw-bold'>Daniel Duke WarmTour <sup className='text-success'>Guide</sup></p><hr />

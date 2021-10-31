@@ -7,7 +7,7 @@ const WorkingProcess = () => {
         <Container className="text-center my-5">
             <p className="text-danger p-0">WORKING PROCESS</p>
             <h1>How It Works?</h1>
-            <Row lg={3}>
+            <Row lg={3} xs={1}>
                 <Col className="text-center">
                     <img className="working" src="https://codeminifier.com/travel-stock-demo/assets/img/tour-1.png" alt="tour-1" />
                     <h5>Choose a Destination & Guide</h5>
