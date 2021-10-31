@@ -27,10 +27,16 @@ const Headers = () => {
                                 <NavLink to="/allpackages" className="menuItem" activeClassName="selected">All Packages</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/addpackage" className="menuItem" activeClassName="selected">Add Package</NavLink>
-                            </li>
-                            <li>
                                 <NavLink to="/hireguides" className="menuItem" activeClassName="selected">All Guides</NavLink>
+                            </li>
+                            {
+                                user.email && <li>
+                                    <NavLink to="/addpackage" className="menuItem" activeClassName="selected">Add Package</NavLink>
+                                </li>
+                            }
+
+                            <li>
+                                <NavLink to="/bookings" className="menuItem" activeClassName="selected">All Bookings</NavLink>
                             </li>
                         </ul>
 

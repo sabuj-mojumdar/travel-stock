@@ -6,7 +6,7 @@ import Package from "../AllPackages/Package";
 
 const HomePackage = () => {
     const packages = UsePackage();
-    const slicePackage = packages.slice(0, 5);
+    const slicePackage = packages.slice(0, 6);
 
     return (
         <Container>
@@ -18,13 +18,13 @@ const HomePackage = () => {
                             pd={pd}
                         />)
                 }
-                <div className="text-center m-auto">
-
-                    <Link to="/allpackages">
-                        <Button className="btn-success">See All Packages</Button>
-                    </Link>
-                </div>
             </Row>
+            <div className="text-center m-auto">
+
+                <Link to="/allpackages">
+                    <Button className="btn-success">See All Packages</Button>
+                </Link>
+            </div>
         </Container>
     );
 };

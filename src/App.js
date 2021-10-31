@@ -64,9 +64,9 @@ function App() {
             <PrivateRoute path="/hireguide/guide/myprofile">
               <MyProfile />
             </PrivateRoute>
-            <Route path="/bookings">
+            <PrivateRoute path="/bookings">
               <AllBooking />
-            </Route>
+            </PrivateRoute>
             <Route path="/updatebook/:bid">
               <UpdateBooking />
             </Route>

@@ -10,7 +10,7 @@ const AllPackages = () => {
     return (
         <Container>
             <h1 className="text-center">Explore all Packages</h1>
-            <Row lg={3} className="g-3">
+            <Row lg={3} className="g-3 mb-3">
                 {
                     !packages ?
                         <div className="d-flex justify-content-center align-items-center p-5">
