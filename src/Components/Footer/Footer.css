@@ -1,0 +1,15 @@
+.underline{
+    width: 80px;
+    height: 5px;
+    background-color: white;
+}
+.footer-logo{
+    font-size: 20px !important;
+    font-weight: bold;
+    border-bottom: 1px solid white;
+    background-color: rgb(54, 55, 56);
+}
+.quickLink a{
+    color: rgb(173, 162, 162);
+    text-decoration: none;
+}

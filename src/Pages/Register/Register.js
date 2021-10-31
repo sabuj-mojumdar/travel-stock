@@ -4,7 +4,7 @@ import { Link, useLocation, useHistory } from 'react-router-dom';
 import UseAuth from '../../Hooks/UseAuth';
 
 const Register = () => {
-    const { handlePasswordChange, handleEmailChange, handleRegistration, passwordError, handleNameChange } = UseAuth();
+    const { handlePasswordChange, handleImageChange, handleEmailChange, handleRegistration, passwordError, handleNameChange } = UseAuth();
     const location = useLocation();
     const history = useHistory();
     const redirect_url = location.state?.from || "/";
@@ -31,6 +31,18 @@ const Register = () => {
                                     <FormControl onBlur={handleNameChange}
                                         type="text"
                                         placeholder="Enter your Name"
+                                        className="me-2" required
+                                    /></Col>
+                            </Row>
+
+                            <Row className="mb-2">
+                                <Col lg={3} className="text-start my-auto">
+                                    <label>Your Image Url</label>
+                                </Col>
+                                <Col lg={9}>
+                                    <FormControl onBlur={handleImageChange}
+                                        type="text"
+                                        placeholder="https://images.com/pathname"
                                         className="me-2" required
                                     /></Col>
                             </Row>

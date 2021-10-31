@@ -1,0 +1,66 @@
+.hire-guide{
+    background-color: rgba(109, 109, 109, 0.1);
+}
+.banner{
+    height:100%;
+    width: 100%;
+    background:linear-gradient(0deg, rgba(41, 29, 29, 0.3), rgba(7, 62, 94, 0.3)), url("https://codeminifier.com/travel-stock-demo/assets/img/banner.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+}
+.padding{
+    padding: 100px;
+}
+p{
+    margin: 5px;
+}
+.title{
+    color: white;
+}
+.text-active{
+    color: orange;
+    text-decoration: none;
+}
+.user-img{
+    width: 120px;
+    border: 5px solid white;
+}
+.homePage, .homePage:hover{
+    color: white;
+}
+.currentPage, .currentPage:hover{
+    color: orange;
+}
+.icon{
+    padding: 10px;
+}
+.icon-bg{
+    background-color: rgba(0,0,0,0.1);
+}
+.fa-star{
+    font-size: 12px;
+}
+.text{
+    color: rgba(0, 0, 0, 0.6);
+}
+.card-box{
+    border-radius: 30px;
+}
+/*
+
+Guide details
+*/
+.guide-details{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+li{
+    list-style: none;
+}
+
+.bookNowbtn:hover .fa-arrow-right{
+    margin-left: 5px;
+}

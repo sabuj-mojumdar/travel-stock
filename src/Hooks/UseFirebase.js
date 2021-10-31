@@ -1,4 +1,13 @@
-import { getAuth, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, GoogleAuthProvider, signOut, onAuthStateChanged } from "firebase/auth";
+import {
+    getAuth,
+    signInWithPopup,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    updateProfile,
+    GoogleAuthProvider,
+    signOut,
+    onAuthStateChanged
+} from "firebase/auth";
 import { useEffect, useState } from "react";
 import FirebaseInitialize from "../Firebase/Firebase.init";
 
@@ -10,12 +19,16 @@ const UseFirebase = () => {
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [userName, setUserName] = useState('');
+    const [userImage, setUserImage] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [passwordError, setPasswordError] = useState('');
 
     const handleNameChange = e => {
         setUserName(e.target.value);
+    }
+    const handleImageChange = e => {
+        setUserImage(e.target.value);
     }
     const handleEmailChange = e => {
         setEmail(e.target.value);
@@ -25,7 +38,7 @@ const UseFirebase = () => {
     }
 
     const updateProfileName = () => {
-        updateProfile(auth.currentUser, { displayName: userName })
+        updateProfile(auth.currentUser, { displayName: userName, photoURL: userImage })
             .then(result => {
 
             })
@@ -37,7 +50,7 @@ const UseFirebase = () => {
         }
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
-                const info = { ...result.user, displayName: userName };
+                const info = { ...result.user, displayName: userName, photoURL: userImage };
                 setUser(info);
                 updateProfileName();
             })
@@ -54,6 +67,7 @@ const UseFirebase = () => {
         setIsLoading(true);
         const googleProvider = new GoogleAuthProvider();
         return signInWithPopup(auth, googleProvider)
+            .finally(() => { setIsLoading(false) });
 
     }
     const logOut = () => {
@@ -80,15 +94,16 @@ const UseFirebase = () => {
 
     return {
         signInWithGoogle,
+        isLoading,
         handleNameChange,
+        handleImageChange,
         handlePasswordChange,
         handleEmailChange,
         handleRegistration,
         handleLogin,
         passwordError,
         logOut,
-        user,
-        isLoading
+        user
     }
 }
 

@@ -1,0 +1,51 @@
+.header{
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 99;
+}
+.selected{
+    color:white;
+   background-color: orange;
+    text-decoration: none;
+}
+.menuItem{
+    text-align: center;
+    margin: 0 auto;
+    padding: 5px 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.menu{
+    margin: auto 0;
+}
+.menu li{
+    margin-right: 10px;
+}
+.signout a, .signIn a{
+    color: white;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 770px){
+    .top-header{
+        display: none;
+    }
+    .menu{
+        display: block !important;
+    }
+    .menuItem{
+        font-weight: bold; 
+        border-bottom: 1px solid rgba(0,0,0,0.4);
+        color: black;
+    }
+    .menuBtn{
+        display: block !important;
+    }
+    .signIn, .signout{
+        margin-top: 10px;
+        width: 100%;
+
+    }
+}

@@ -1,0 +1,13 @@
+.package{
+    position: relative;
+}
+.discount{
+    position: absolute;
+    top: 0;
+    right: 0px;
+    border-radius: 0px 0 10px 10px;
+    color: white;
+}
+.justify{
+    text-align: justify;
+}
