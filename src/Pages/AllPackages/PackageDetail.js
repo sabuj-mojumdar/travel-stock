@@ -54,7 +54,7 @@ const PackageDetail = () => {
                 </Row>
                 <hr />
                 <Row className="g-3">
-                    <Col lg={8} sm={6}>
+                    <Col lg={8} sx={12}>
                         <Card className="mb-3">
                             <Card.Body>
                                 <p><i className="far fa-star"></i> Overview</p>
@@ -135,7 +135,7 @@ const PackageDetail = () => {
                             </Card.Body>
                         </Card>
                     </Col>
-                    <Col lg={4} sm={4}>
+                    <Col lg={4} xs={12}>
                         <Card className="mb-3">
                             <Card.Body>
                                 <p className='fw-bold'>Daniel Duke WarmTour <sup className='text-success'>Guide</sup></p><hr />
