@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 const UseGuide = () => {
     const location = useLocation();
     const history = useHistory();
-    const redirect_url = location.state?.from || `/bookings`;
+    const redirect_url = location.state?.from || `/placeorder`;
     const [allGuides, setAllGuides] = useState([]);
     const [uniqueGuide, setUniqueGuide] = useState({});
     const { gid } = useParams();

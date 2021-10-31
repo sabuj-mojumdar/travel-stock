@@ -1,20 +1,21 @@
 import React from 'react';
 import { Col, Container, Form, Row, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import UseAuth from '../../Hooks/UseAuth';
+import UseBook from '../../Hooks/UseBook';
 import UseGuide from '../../Hooks/UseGuide';
 
 const UpdateBooking = () => {
     const { user } = UseAuth();
-    const { allGuides, ubook, handleUpdateCheckIn, handleUpdateCheckOut, handleUpdateAdult, handleUpdateChild, handleUpdateRoom, handleUpdateNight, handleUpdateOrder, handleUpdateGuide, handleUpdateBooking } = UseGuide();
-
-
+    const { allGuides, handleUpdateCheckIn, handleUpdateCheckOut, handleUpdateAdult, handleUpdateChild, handleUpdateRoom, handleUpdateNight, handleUpdateOrder, handleUpdateGuide, handleUpdateBooking } = UseGuide();
+    const { ubook } = UseBook();
     const { checkIn, checkOut, adult, child, room, night, order, guide } = ubook;
 
 
     return (
         <div>
-            <Container>
-                <h2>Update your Booking: {user.displayName}</h2>
+            <Container className="my-5">
+                <h2 className="text-center">Update your Booking: {user.displayName}</h2>
                 <Form onSubmit={handleUpdateBooking}>
                     <Form.Group className="mb-3" >
                         <Form.Label>
@@ -86,8 +87,11 @@ const UpdateBooking = () => {
                         </Col>
                     </Form.Group>
 
-                    <Col xs="12" className="my-1">
+                    <Col xs="6" className="my-1">
                         <Button type="submit" className="w-100 py-2 btn-danger bookNowbtn">Update <i className="fas fa-arrow-right"></i></Button>
+                    </Col>
+                    <Col xs="6" className="my-1">
+                        <Link to="/placeorder"><Button className="btn-primary">PlaceOrder</Button></Link>
                     </Col>
                 </Form>
 

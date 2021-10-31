@@ -5,3 +5,12 @@
     width: 120px;
     border-radius: 50%;
 }
+.pagenotFound{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.notFound{
+    font-size: 100px;
+}

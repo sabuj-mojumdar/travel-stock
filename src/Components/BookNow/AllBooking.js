@@ -9,7 +9,7 @@ const AllBooking = () => {
     const { bookings, handleDeleteBooking } = UseBook();
     return (
         <Container>
-            <h2>{user.displayName}, your order Here</h2>
+            <h2>{user.displayName}, All User order Here</h2>
             <Table striped bordered hover className="text-center">
                 <thead>
                     <tr>
