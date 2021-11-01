@@ -17,6 +17,7 @@ const AllBooking = () => {
                         <th>CheckIn</th>
                         <th>CheckOut</th>
                         <th>Order</th>
+                        <th>Place Order</th>
                         <th>Update</th>
                         <th>Delete</th>
                     </tr>
@@ -29,6 +30,7 @@ const AllBooking = () => {
                                 <td>{book.checkIn}</td>
                                 <td>{book.checkOut}</td>
                                 <td>{book.order}</td>
+                                <td><Link to={`/placeorder/${book._id}`}><Button>Place Order</Button></Link></td>
                                 <td><Link to={`/updatebook/${book._id}`}><Button className="btn-success">Update</Button></Link></td>
                                 <td>
                                     <Button onClick={() => handleDeleteBooking(book._id)} className="btn-danger">Delete</Button>

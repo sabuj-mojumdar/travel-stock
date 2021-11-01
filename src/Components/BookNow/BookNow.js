@@ -1,10 +1,12 @@
 import React from 'react';
 import { Card, Col, Form, Row, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import UseGuide from '../../Hooks/UseGuide';
+import UsePackage from '../../Hooks/UsePackage';
 
 const BookNow = () => {
     const { allGuides, handlecheckIn, handleCheckOut, handleAdult, handleChild, handleRoom, handleNight, handleOrder, handleGuide, handleBooking } = UseGuide();
+    const { uniquePackage } = UsePackage();
+    const price = parseInt(uniquePackage.price);
 
     return (
         <Card className='mb-3'>
@@ -40,7 +42,8 @@ const BookNow = () => {
                                 Room
                             </Form.Label>
                             <Form.Select onChange={handleRoom} required>
-                                <option value="1" selected>1</option>
+                                <select>Select room</select>
+                                <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
@@ -51,7 +54,8 @@ const BookNow = () => {
                                 Night
                             </Form.Label>
                             <Form.Select onChange={handleNight} required>
-                                <option value="1" selected>1</option>
+                                <option>Select night</option>
+                                <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
@@ -80,16 +84,15 @@ const BookNow = () => {
                         </Col>
                         <Col sm="6" className="mb-1">
                             <Form.Label>
-                                Guide Details
+                                Total Price
                             </Form.Label>
-                            <Link to="/hireguides">
-                                <Button className="btn-primary w-100">All Guides</Button>
-                            </Link>
+                            <h5 className="border border-2 p-1 text-center">${price}</h5>
                         </Col>
                     </Form.Group>
 
                     <Col xs="12" className="my-1">
-                        <Button type="submit" className="w-100 py-2 btn-danger bookNowbtn">Book Now <i className="fas fa-arrow-right"></i></Button>
+                        <Button type="submit" className="w-100 py-2 btn-danger bookNowbtn">Book Now <i className="fas fa-arrow-right"></i>
+                        </Button>
                     </Col>
                 </Form>
             </Card.Body>

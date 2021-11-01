@@ -1,22 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Container, Button, Row, Col, Card } from 'react-bootstrap';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import BookNow from '../../Components/BookNow/BookNow';
 import UseAuth from '../../Hooks/UseAuth';
+import UsePackage from '../../Hooks/UsePackage';
 
 const PackageDetail = () => {
-    const { uid } = useParams();
-    const [uniquePackage, setUniquePackage] = useState({});
-    const { user } = UseAuth()
-
-
-
-    useEffect(() => {
-        fetch(`https://young-lowlands-26223.herokuapp.com/packages/${uid}`)
-            .then(res => res.json())
-            .then(data => setUniquePackage(data));
-    }, [uid]);
-
+    const { user } = UseAuth();
+    const { uniquePackage } = UsePackage();
 
 
     const banner = {
@@ -48,7 +39,7 @@ const PackageDetail = () => {
                         </div>
                         <div>
                             <Link to={`/addpackage`} className="my-auto mx-3"><Button className="btn btn-warning">Add a Package</Button></Link>
-                            <Link to={`/update-package/${uid}`} className="my-auto"><Button className="btn btn-danger">Update Package</Button></Link>
+                            <Link to={`/update-package/${uniquePackage._id}`} className="my-auto"><Button className="btn btn-danger">Update Package</Button></Link>
                         </div>
                     </div>
                 </Row>

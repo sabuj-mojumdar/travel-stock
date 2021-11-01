@@ -1,18 +1,23 @@
 import React from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
-import { useLocation, useHistory, Link } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import UseAuth from '../../Hooks/UseAuth';
+import UseBook from '../../Hooks/UseBook';
+import "./placeOrder.css";
 
 const PlaceOrder = () => {
     const { user } = UseAuth();
+    const { ubook } = UseBook();
 
-    const locationurl = useLocation();
+
+
+    const location = useLocation();
     const history = useHistory();
-    const redirect_url = locationurl.state?.from || `/allpackages`;
-
-    const handlePlaceOrder = () => {
+    const redirect_url = location.state?.from || `/updateorder/${ubook._id}`;
+    const handlePlaceOrder = (e) => {
         const proceed = window.confirm("Your Order is Successfully procced. Do you Want to complete your Order?");
         if (proceed) {
+            e.preventDefault();
             history.push(redirect_url);
         }
     }
@@ -20,7 +25,7 @@ const PlaceOrder = () => {
     return (
         <Container className="my-5">
             <h2>Your({user.displayName}) PlaceOrder</h2>
-            <Form onSubmit={handlePlaceOrder}>
+            <Form onSubmit={handlePlaceOrder} >
                 <Form.Group className="mb-3" >
                     <Form.Label>
                         User Name
@@ -53,9 +58,7 @@ const PlaceOrder = () => {
                     </Button>
                 </div>
             </Form>
-            <div>
-                <Link to="/bookings"><Button>Update Your Booking</Button></Link>
-            </div>
+
 
         </Container>
     );

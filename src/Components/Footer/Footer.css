@@ -1,5 +1,4 @@
 .underline{
-    width: 80px;
     height: 5px;
     background-color: white;
 }
@@ -8,6 +7,10 @@
     font-weight: bold;
     border-bottom: 1px solid white;
     background-color: rgb(54, 55, 56);
+}
+.footer-logo img{
+    margin-top: 10px;
+    width: 150px;
 }
 .quickLink a{
     color: rgb(173, 162, 162);

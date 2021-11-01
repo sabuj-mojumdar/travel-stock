@@ -6,10 +6,10 @@ import "./Footer.css";
 const Footer = () => {
     return (
         <div className="bg-dark">
-            <Container className="text-white text-start p-3">
-                <Row md={3} lg={4} sm={2} className="border border-top-0 border-start-0 border-end-0">
+            <Container className="text-white text-center p-3">
+                <Row lg={4} sm={2} xs={1} className="border border-top-0 border-start-0 border-end-0">
                     <Col>
-                        <Link to="/" className="footer-logo w-50 p-3 rounded-3 bg-white">
+                        <Link to="/" className="footer-logo w-50 px-1 pb-3 rounded-3 bg-white">
                             <img className="img-fluid" src="https://codeminifier.com/travel-stock-demo/assets/img/logo.png" alt="" />
                         </Link>
                         <p><i className="fas fa-map-marker-alt"></i> Banglabazar, Noakhali</p>

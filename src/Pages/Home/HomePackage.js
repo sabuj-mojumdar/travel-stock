@@ -5,12 +5,12 @@ import UsePackage from "../../Hooks/UsePackage";
 import Package from "../AllPackages/Package";
 
 const HomePackage = () => {
-    const packages = UsePackage();
+    const { packages } = UsePackage();
     const slicePackage = packages.slice(0, 6);
 
     return (
         <Container>
-            <Row lg={3} xs={6} className="g-3 my-3">
+            <Row lg={3} md={2} xs={1} className="g-3 my-3">
                 {
                     slicePackage.map(pd =>
                         <Package

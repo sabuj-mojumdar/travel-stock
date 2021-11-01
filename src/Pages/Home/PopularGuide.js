@@ -18,6 +18,7 @@ const PopularGuide = () => {
                             <Card>
                                 <Card.Body>
                                     <img className="guide-img" src={guide.photo} alt="guide" />
+                                    <h4>{guide.name}</h4>
                                     <div className="d-flex justify-content-between">
                                         <p>Hire: {guide.hire}</p>
                                         <p>Experience: {guide.exp} years</p>

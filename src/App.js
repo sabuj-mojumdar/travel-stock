@@ -23,6 +23,7 @@ import AllBooking from './Components/BookNow/AllBooking';
 import UpdateBooking from './Components/BookNow/UpdateBooking';
 import Footer from './Components/Footer/Footer';
 import PlaceOrder from './Pages/PlaceOrder/PlaceOrder';
+import UpdateOrder from './Pages/PlaceOrder/UpdateOrder';
 
 function App() {
   return (
@@ -71,8 +72,11 @@ function App() {
             <PrivateRoute path="/updatebook/:bid">
               <UpdateBooking />
             </PrivateRoute>
-            <PrivateRoute path="/placeorder">
+            <PrivateRoute path="/placeorder/:bid">
               <PlaceOrder />
+            </PrivateRoute>
+            <PrivateRoute path="/updateorder/:bid">
+              <UpdateOrder />
             </PrivateRoute>
             <Route path="/login">
               <Login />

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Col, Container, Form, FormControl, Row } from 'react-bootstrap';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 import UseAuth from '../../Hooks/UseAuth';
@@ -8,6 +8,7 @@ const Login = () => {
     const location = useLocation();
     const history = useHistory();
     const redirect_url = location.state?.from || "/";
+    const [error, setError] = useState('');
 
     const handleGoogleLogin = () => {
         signInWithGoogle()
@@ -21,6 +22,8 @@ const Login = () => {
             .then(result => {
                 console.log(result.user);
                 history.push(redirect_url);
+            }).catch(error => {
+                setError(error.message);
             })
 
     }
@@ -56,6 +59,7 @@ const Login = () => {
                                 /></Col>
                         </Row>
                         <Row className="m-3">
+                            <p className="text-danger">{error}</p>
                             <Col>
                                 <Button variant="outline-primary" className=" w-100 bgbtn">
                                     <input type="submit" value="login" className="border-0 w-100 bg" />

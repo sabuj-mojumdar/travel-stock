@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useHistory, useLocation, useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 
 const UseBook = () => {
     const [bookings, setBookings] = useState([]);
@@ -32,11 +32,7 @@ const UseBook = () => {
 
         }
     }
-
-
-    const location = useLocation();
     const history = useHistory();
-    const redirect_url = location.state?.from || `/bookings`;
 
     useEffect(() => {
         const url = `https://young-lowlands-26223.herokuapp.com/bookings/${bid}`;
@@ -111,7 +107,8 @@ const UseBook = () => {
                     setUBook({});
                 }
             })
-        history.push(redirect_url);
+        history.push(`/bookings/${bid}`);
+
         e.preventDefault();
     }
 

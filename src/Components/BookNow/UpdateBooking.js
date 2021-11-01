@@ -7,8 +7,8 @@ import UseGuide from '../../Hooks/UseGuide';
 
 const UpdateBooking = () => {
     const { user } = UseAuth();
-    const { allGuides, handleUpdateCheckIn, handleUpdateCheckOut, handleUpdateAdult, handleUpdateChild, handleUpdateRoom, handleUpdateNight, handleUpdateOrder, handleUpdateGuide, handleUpdateBooking } = UseGuide();
-    const { ubook } = UseBook();
+    const { ubook, handleUpdateCheckIn, handleUpdateCheckOut, handleUpdateAdult, handleUpdateChild, handleUpdateRoom, handleUpdateNight, handleUpdateOrder, handleUpdateGuide, handleUpdateBooking } = UseBook();
+    const { allGuides } = UseGuide();
     const { checkIn, checkOut, adult, child, room, night, order, guide } = ubook;
 
 
@@ -47,7 +47,8 @@ const UpdateBooking = () => {
                                 Room
                             </Form.Label>
                             <Form.Select onChange={handleUpdateRoom} value={room || ''}>
-                                <option value="1" selected>1</option>
+                                <option>Select room</option>
+                                <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
@@ -58,7 +59,7 @@ const UpdateBooking = () => {
                                 Night
                             </Form.Label>
                             <Form.Select onChange={handleUpdateNight} value={night || ''}>
-                                <option value="1" selected>1</option>
+                                <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
@@ -68,8 +69,8 @@ const UpdateBooking = () => {
                             <Form.Label>
                                 Update Order
                             </Form.Label>
-                            <Form.Select onChange={handleUpdateOrder} required value={order || ''}>
-                                <option value="Procecing" selected>Procecing</option>
+                            <Form.Select onChange={handleUpdateOrder} value={order || ''}>
+                                <option value="Procecing" >Procecing</option>
                                 <option value="Packaging">Packaging</option>
                                 <option value="Cancelling">Cencel</option>
                                 <option value="Place Order">Place Order</option>
@@ -79,7 +80,7 @@ const UpdateBooking = () => {
                             <Form.Label>
                                 Guide
                             </Form.Label>
-                            <Form.Select onChange={handleUpdateGuide} required value={guide || ''}>
+                            <Form.Select onChange={handleUpdateGuide} value={guide || ''}>
                                 {
                                     allGuides.map(gd => <option key={gd._id} value={gd.name}>{gd.name}</option>)
                                 }
@@ -87,12 +88,14 @@ const UpdateBooking = () => {
                         </Col>
                     </Form.Group>
 
-                    <Col xs="6" className="my-1">
-                        <Button type="submit" className="w-100 py-2 btn-danger bookNowbtn">Update <i className="fas fa-arrow-right"></i></Button>
-                    </Col>
-                    <Col xs="6" className="my-1">
-                        <Link to="/placeorder"><Button className="btn-primary">PlaceOrder</Button></Link>
-                    </Col>
+                    <Row md={2} xs={1}>
+                        <Col className="my-1">
+                            <Button type="submit" className="w-100 py-2 btn-danger bookNowbtn">Update <i className="fas fa-arrow-right"></i></Button>
+                        </Col>
+                        <Col className="my-1">
+                            <Link to="/placeorder"><Button className="btn-primary w-100"> PlaceOrder Page </Button></Link>
+                        </Col>
+                    </Row>
                 </Form>
 
             </Container>

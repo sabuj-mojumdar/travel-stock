@@ -5,7 +5,7 @@ import Package from './Package';
 import "./packages.css";
 
 const AllPackages = () => {
-    const packages = UsePackage();
+    const { packages } = UsePackage();
 
     return (
         <Container>
