@@ -11,7 +11,7 @@ const PopularGuide = () => {
         <Container className="text-center my-5">
             <p className="text-danger p-0">POPULAR GUIDE</p>
             <h1>Dedicated Guide</h1>
-            <Row lg={3}>
+            <Row lg={3} className="g-3">
                 {
                     sliceGuide.map(guide =>
                         <Col key={guide._id}>

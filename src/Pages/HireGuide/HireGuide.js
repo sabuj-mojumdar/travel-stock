@@ -22,7 +22,7 @@ const HireGuide = () => {
                 </div>
             </div>
             <Container>
-                <Row md={2} xs={1} lg={3} className="g-3 my-5 text">
+                <Row md={2} xs={1} lg={3} className="g-3 py-5 text">
                     {
                         guides.map(guide => <Guide
                             key={guide._id}
