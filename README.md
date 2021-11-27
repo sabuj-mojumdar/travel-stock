@@ -21,7 +21,7 @@ This project's [Live Site](https://tourism-website-2b701.web.app/).
 - Firebase
 - Heroku.
 
-![name-of-you-image](https://travelicious.bold-themes.com/main-demo/wp-content/uploads/sites/2/2018/09/destination-london-07-800x533.jpg)
+![name-of-you-image](https://raw.githubusercontent.com/sabuj-mojumdar/travel-stock/main/src/images/Screenshot_16.png)
 
 Travel is one of those things that naturally gives rise to queries, concerns and doubts, so we’re here to put your mind at ease. Which trip is right for me? What do I do about visas? How much do I tip? Should I have banh mi or pho for lunch? For questions frequent and otherwise, this is the spot.
 
